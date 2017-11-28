@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+	<%-- <table>
 		<c:forEach items="${pageInfo.list}" var="emp">
 			<tr>
 			<td>${emp.empno}</td>
@@ -17,5 +17,6 @@
 			<tr>
 		</c:forEach>
 	</table>
+	共${pageInfo.total}条记录 --%>
 </body>
 </html>

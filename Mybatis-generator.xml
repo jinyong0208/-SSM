@@ -42,6 +42,7 @@
 		</javaClientGenerator>
 
 		<!--table每个表的生成策略 -->
-		<table tableName="emp" domainObjectName="Employee"></table>
+		<!-- <table tableName="emp" domainObjectName="Employee"></table> -->
+		<table tableName="dept" domainObjectName="Department"></table>
 	</context>
 </generatorConfiguration>
