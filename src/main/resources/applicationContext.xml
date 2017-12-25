@@ -13,17 +13,23 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	<!--数据源 -->
-	<context:property-placeholder location="classpath:dbconfig.properties"/>
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="${jdbc.driverClass}"></property>
-		<property name="jdbcUrl" value="${jdbc.Url}"></property>
-		<property name="user" value="${jdbc.username}"></property>
+	<context:property-placeholder location="classpath:dbconfig.properties" />
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClass}"></property>
+		<property name="url" value="${jdbc.Url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
 		<property name="password" value="${jdbc.password}"></property>
-		
-		<property name="initialPoolSize" value="10"></property>
-		<property name="maxIdleTime" value="30"></property>
-		<property name="maxPoolSize" value="100"></property>
-		<property name="minPoolSize" value="10"></property>
+
+		<!--初试连接数 -->
+		<property name="initialSize" value="30"></property>
+		<!--最大活跃数 -->
+		<property name="maxTotal" value="30"></property>
+		<!--最大idle数 -->
+		<property name="maxIdle" value="10"></property>
+		<!--最小idle数 -->
+		<property name="minIdle" value="5"></property>
+		<!-- #连接的超时时间，默认为半小时。 -->
+		<property name="minEvictableIdleTimeMillis" value="3600000" />
 	</bean>
 	<!--MyBatis整合 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

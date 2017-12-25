@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barmiy</groupId>
-	<artifactId>EasyUI</artifactId>
+	<artifactId>BM</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -22,12 +22,12 @@
 	</build>
 	<!--依赖包 -->
 	<dependencies>
+		<!--postgresqlJDBC驱动 -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
-			<!-- oracle jdbc driver -->
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0.2.0</version>
-			<scope>runtime</scope>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.1.4</version>
 		</dependency>
 		<!-- SpringMVC -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
@@ -92,12 +92,13 @@
 			<version>5.0.0</version>
 		</dependency>
 		<!--数据库连接池、数据库驱动 -->
-		<!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
 		</dependency>
+
 		<!-- jstl、servlet api junit -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
