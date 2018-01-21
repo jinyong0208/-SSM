@@ -15,8 +15,8 @@
 
 		<!-- 配置数据库连接信息 -->
 
-		<jdbcConnection driverClass="oracle.jdbc.OracleDriver"
-			connectionURL="jdbc:oracle:thin:@localhost:1521:XE" userId="dev"
+		<jdbcConnection driverClass="org.postgresql.Driver"
+			connectionURL="jdbc:postgresql://127.0.0.1:5432/edms" userId="postgres"
 			password="123">
 		</jdbcConnection>
 
@@ -43,6 +43,6 @@
 
 		<!--table每个表的生成策略 -->
 		<!-- <table tableName="emp" domainObjectName="Employee"></table> -->
-		<table tableName="dept" domainObjectName="Department"></table>
+		<table tableName="person" domainObjectName="Person"></table>
 	</context>
 </generatorConfiguration>
